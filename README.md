@@ -1,5 +1,3 @@
-Конечно 👍 Вот тот же README, но просто текстом без Markdown, чтобы ты мог вставить куда угодно (например в описание, Confluence или txt).
-
 QA Tests Repository
 
 This repository contains automated and manual QA tests for web projects.
