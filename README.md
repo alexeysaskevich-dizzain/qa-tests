@@ -1,12 +1,12 @@
-****# QA Tests Repository
+# QA Tests Repository
 
 This repository contains automated and manual QA tests for web projects.  
 It includes two separate testing stacks:
 
 - Playwright — visual regression & automated checks  
-   Cypress — interactive/manual test runs  
+- Cypress — interactive/manual test runs
 
-# Requirements
+Requirements
 
 Make sure you have installed:
 
