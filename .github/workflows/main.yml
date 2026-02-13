@@ -20,13 +20,13 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        working-directory: Playwright
+        working-directory: Playwright/skai-wp-regression-tests
         run: |
           npm install
           npx playwright install --with-deps
 
       - name: Run Playwright tests
-        working-directory: Playwright
+        working-directory: Playwright/skai-wp-regression-tests
         run: npx playwright test
 
   cypress:
@@ -43,9 +43,9 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        working-directory: Cypress
+        working-directory: Cypress/cypress-tests
         run: npm install
 
       - name: Run Cypress tests
-        working-directory: Cypress
+        working-directory: Cypress/cypress-tests
         run: npx cypress run
