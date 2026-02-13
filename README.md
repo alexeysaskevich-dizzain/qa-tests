@@ -8,21 +8,6 @@ It includes two separate testing stacks:
 
 ---
 
-# 📁 Repository Structure
-
-qa-tests
-├── Cypress/
-│ └── cypress-tests/ # Cypress project
-│
-└── Playwright/
-├── cymulate-DEV-wp-regression-tests/
-├── cymulate-wp-regression-tests/
-├── skai-DEV-wp-regression-tests/
-└── skai-wp-regression-tests/
-
-
----
-
 # ⚙️ Requirements
 
 Make sure you have installed:
