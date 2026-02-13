@@ -1,51 +1,92 @@
 name: QA Tests
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
-  workflow_dispatch:
 
 jobs:
-  playwright:
-    name: Playwright Tests
+
+  skai-prod:
+    name: Playwright — Skai PROD
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install
         working-directory: Playwright/skai-wp-regression-tests
         run: |
           npm install
           npx playwright install --with-deps
 
-      - name: Run Playwright tests
+      - name: Run tests
         working-directory: Playwright/skai-wp-regression-tests
         run: npx playwright test
 
-  cypress:
-    name: Cypress Tests
+
+  skai-dev:
+    name: Playwright — Skai DEV
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies
-        working-directory: Cypress/cypress-tests
-        run: npm install
+      - name: Install
+        working-directory: Playwright/skai-DEV-wp-regression-tests
+        run: |
+          npm install
+          npx playwright install --with-deps
 
-      - name: Run Cypress tests
-        working-directory: Cypress/cypress-tests
-        run: npx cypress run
+      - name: Run tests
+        working-directory: Playwright/skai-DEV-wp-regression-tests
+        run: npx playwright test
+
+
+  cymulate-prod:
+    name: Playwright — Cymulate PROD
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install
+        working-directory: Playwright/cymulate-wp-regression-tests
+        run: |
+          npm install
+          npx playwright install --with-deps
+
+      - name: Run tests
+        working-directory: Playwright/cymulate-wp-regression-tests
+        run: npx playwright test
+
+
+  cymulate-dev:
+    name: Playwright — Cymulate DEV
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install
+        working-directory: Playwright/cymulate-DEV-wp-regression-tests
+        run: |
+          npm install
+          npx playwright install --with-deps
+
+      - name: Run tests
+        working-directory: Playwright/cymulate-DEV-wp-regression-tests
+        run: npx playwright test
