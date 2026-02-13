@@ -1,37 +1,37 @@
-QA Tests Repository
+# QA Tests Repository
 
-This repository contains automated and manual QA tests for web projects.
+This repository contains automated QA tests for web projects.
 It includes two separate testing stacks:
 
 Playwright — visual regression and automated checks
 Cypress — interactive and manual test runs
 
-Repository Structure
+# Repository Structure
 
-qa-tests
-Cypress
-cypress-tests (Cypress project)
+qa-tests/
+-/Cypress
+--/cypress-tests
+--/cypress
+-/Playwright
+--/cymulate-DEV-wp-regression-tests
+--/cymulate-wp-regression-tests
+--/skai-DEV-wp-regression-tests
+--/skai-wp-regression-tests
 
-Playwright
-cymulate-DEV-wp-regression-tests
-cymulate-wp-regression-tests
-skai-DEV-wp-regression-tests
-skai-wp-regression-tests
-
-Requirements
+# Requirements
 
 Make sure you have installed:
 
-Node.js (version 18 or newer recommended)
-npm
-Git
+-Node.js (version 18 or newer recommended)
+-npm
+-Git
 
 You can check versions with:
 
 node -v
 npm -v
 
-Getting Started
+# Getting Started
 
 Clone the repository:
 
@@ -39,7 +39,7 @@ git clone https://github.com/alexeysaskevich-dizzain/qa-tests.git
 
 cd qa-tests
 
-Running Playwright Tests
+# Running Playwright Tests
 
 Playwright is mainly used for visual regression and automated page checks.
 
@@ -57,7 +57,7 @@ View HTML report:
 
 npx playwright show-report
 
-Running Cypress Tests (Interactive Mode)
+# Running Cypress Tests (Interactive Mode)
 
 Cypress is used for manual runs, debugging and exploratory testing.
 
@@ -69,33 +69,49 @@ npx cypress open
 
 This opens the Cypress Test Runner where you can select and run any test manually.
 
-Notes
+# Notes
 
 Tests are designed to run locally.
 CI/CD is intentionally not configured.
 node_modules folders are ignored in Git.
 
-Typical Workflow
+# Typical Workflow
 
-Playwright regression:
+WORKFLOW — Visual Regression (Playwright)
 
-Pull latest changes from Git
+Run tests BEFORE plugin update
+Navigate to the project folder and run:
+npm run regression:test
 
-Install dependencies
+Review the report:
+npx playwright show-report
 
-Run tests
+If current UI is correct and baseline needs refresh:
+npm run regression:baseline
 
-Review HTML report
+Update WordPress plugins
+Wait until the update completes and the site loads normally
+
+Run tests AFTER update
+npm run regression:test
+npx playwright show-report
+
+Interpret results
+If failures are similar to before → update is OK
+If new failures or visual issues appear → investigate
+
+Important
+Never update baseline after an update without manual verification
 
 Cypress testing:
 
-Open Cypress UI
+1. Open Cypress UI
 
-Run needed spec file
+2. Run needed spec file
 
-Debug if necessary
+3. Debug if necessary
 
-Troubleshooting
+# Troubleshooting
 
 If tests fail after pulling the repo, run npm install inside the specific test folder you are working with.
 
@@ -103,6 +119,6 @@ If Playwright browsers are missing, run:
 
 npx playwright install
 
-Maintainers
+# Maintainers
 
 QA Team
