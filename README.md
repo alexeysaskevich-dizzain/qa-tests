@@ -1,14 +1,14 @@
-# QA Tests Repository
+****# QA Tests Repository
 
 This repository contains automated and manual QA tests for web projects.  
 It includes two separate testing stacks:
 
-- 🧪 Playwright — visual regression & automated checks  
-- 🌐 Cypress — interactive/manual test runs  
+- Playwright — visual regression & automated checks  
+   Cypress — interactive/manual test runs  
 
 ---
 
-# ⚙️ Requirements
+# Requirements
 
 Make sure you have installed:
 
@@ -22,19 +22,19 @@ Check versions:
 node -v
 npm -v
 
-🚀 Getting Started
+# Getting Started
 
 Clone the repository:
 
 git clone https://github.com/alexeysaskevich-dizzain/qa-tests.git
 cd qa-tests
 
-🧪 Running Playwright Tests
+# Running Playwright Tests
 
 Playwright is used mainly for:
 
-✔ visual regression
-✔ automated page checks
+-visual regression
+-automated page checks
 
 Example (Cymulate DEV)
 cd Playwright/cymulate-DEV-wp-regression-tests
@@ -47,13 +47,13 @@ npx playwright test --update-snapshots
 View HTML report
 npx playwright show-report
 
-🌐 Running Cypress Tests (Interactive)
+# Running Cypress Tests (Interactive)
 
 Cypress is used for:
 
-✔ manual test runs
-✔ debugging
-✔ exploratory QA
+- manual test runs
+- debugging
+- exploratory QA
 
 Start Cypress UI
 cd Cypress/cypress-tests
@@ -61,10 +61,10 @@ npm install
 npx cypress open
 
 
-👉 This opens the Cypress Test Runner
-👉 Select any test and run it manually
+- This opens the Cypress Test Runner
+- Select any test and run it manually
 
-🧹 Notes
+# Notes
 
 Tests are designed to run locally
 
@@ -72,7 +72,7 @@ No CI/CD is configured intentionally
 
 Node modules are ignored in Git
 
-🧑‍💻 Typical Workflow
+# Typical Workflow
 Playwright regression
 
 Pull latest changes
@@ -91,7 +91,7 @@ Run needed spec
 
 Debug if needed
 
-🆘 Troubleshooting
+# Troubleshooting
 If tests fail after pulling
 
 Run:
@@ -103,3 +103,4 @@ inside the test folder you are using.
 
 If Playwright browsers missing
 npx playwright install
+****
