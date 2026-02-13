@@ -6,8 +6,6 @@ It includes two separate testing stacks:
 - Playwright — visual regression & automated checks  
    Cypress — interactive/manual test runs  
 
----
-
 # Requirements
 
 Make sure you have installed:
