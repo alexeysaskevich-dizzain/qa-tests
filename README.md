@@ -1,104 +1,110 @@
-# QA Tests Repository
+Конечно 👍 Вот тот же README, но просто текстом без Markdown, чтобы ты мог вставить куда угодно (например в описание, Confluence или txt).
 
-This repository contains automated and manual QA tests for web projects.  
+QA Tests Repository
+
+This repository contains automated and manual QA tests for web projects.
 It includes two separate testing stacks:
 
-- Playwright — visual regression & automated checks  
-- Cypress — interactive/manual test runs
+Playwright — visual regression and automated checks
+Cypress — interactive and manual test runs
+
+Repository Structure
+
+qa-tests
+Cypress
+cypress-tests (Cypress project)
+
+Playwright
+cymulate-DEV-wp-regression-tests
+cymulate-wp-regression-tests
+skai-DEV-wp-regression-tests
+skai-wp-regression-tests
 
 Requirements
 
 Make sure you have installed:
 
-- Node.js (v18+ recommended)
-- npm
-- Git
+Node.js (version 18 or newer recommended)
+npm
+Git
 
-Check versions:
+You can check versions with:
 
-```bash
 node -v
 npm -v
 
-# Getting Started
+Getting Started
 
 Clone the repository:
 
 git clone https://github.com/alexeysaskevich-dizzain/qa-tests.git
+
 cd qa-tests
 
-# Running Playwright Tests
+Running Playwright Tests
 
-Playwright is used mainly for:
+Playwright is mainly used for visual regression and automated page checks.
 
--visual regression
--automated page checks
+Example for Cymulate DEV:
 
-Example (Cymulate DEV)
 cd Playwright/cymulate-DEV-wp-regression-tests
 npm install
 npx playwright test
 
-Update snapshots (baseline)
+Update snapshots (baseline):
+
 npx playwright test --update-snapshots
 
-View HTML report
+View HTML report:
+
 npx playwright show-report
 
-# Running Cypress Tests (Interactive)
+Running Cypress Tests (Interactive Mode)
 
-Cypress is used for:
+Cypress is used for manual runs, debugging and exploratory testing.
 
-- manual test runs
-- debugging
-- exploratory QA
+Start Cypress UI:
 
-Start Cypress UI
 cd Cypress/cypress-tests
 npm install
 npx cypress open
 
+This opens the Cypress Test Runner where you can select and run any test manually.
 
-- This opens the Cypress Test Runner
-- Select any test and run it manually
+Notes
 
-# Notes
+Tests are designed to run locally.
+CI/CD is intentionally not configured.
+node_modules folders are ignored in Git.
 
-Tests are designed to run locally
+Typical Workflow
 
-No CI/CD is configured intentionally
+Playwright regression:
 
-Node modules are ignored in Git
-
-# Typical Workflow
-Playwright regression
-
-Pull latest changes
+Pull latest changes from Git
 
 Install dependencies
 
 Run tests
 
-Review report
+Review HTML report
 
-Cypress testing
+Cypress testing:
 
 Open Cypress UI
 
-Run needed spec
+Run needed spec file
 
-Debug if needed
+Debug if necessary
 
-# Troubleshooting
-If tests fail after pulling
+Troubleshooting
 
-Run:
+If tests fail after pulling the repo, run npm install inside the specific test folder you are working with.
 
-npm install
+If Playwright browsers are missing, run:
 
-
-inside the test folder you are using.
-
-If Playwright browsers missing
 npx playwright install
-****
+
+Maintainers
+
+QA Team
