@@ -4,6 +4,7 @@ node_modules
 # Playwright
 playwright-report
 test-results
+**/example.spec.js-snapshots/
 
 # Cypress
 cypress/videos

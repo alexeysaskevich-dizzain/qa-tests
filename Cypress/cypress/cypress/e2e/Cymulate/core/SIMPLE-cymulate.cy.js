@@ -65,6 +65,9 @@ describe('Cymulate Website Tests', () => {
       'https://cymulate.com/blog/',
       'https://cymulate.com/news/',
       'https://cymulate.com/events/',
+      'https://cymulate.com/webinars/',
+      'https://cymulate.com/research/',
+      'https://cymulate.com/research/simulations/',
       'https://cymulate.com/ctem-portal/'
     ];
 
