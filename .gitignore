@@ -1,0 +1,17 @@
+# Dependencies
+node_modules
+
+# Playwright
+playwright-report
+test-results
+
+# Cypress
+cypress/videos
+cypress/screenshots
+
+# Claude Code / MCP
+ClaudeMCP
+.claude
+
+# Editor
+.vscode
