@@ -1,10 +1,10 @@
 // @ts-check
-import { defineConfig } from '@playwright/test';
+const { defineConfig } = require('@playwright/test');
 
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-export default defineConfig({
+module.exports = defineConfig({
   testDir: './tests',
 
   // Global timeout per test (2 minutes)
