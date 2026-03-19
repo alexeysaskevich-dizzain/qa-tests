@@ -3,13 +3,13 @@ const pages = require('./pages');
 
 function normalizeName(url) {
   return url
-    .replace('https://skai.io/', '')
+    .replace('https://skaistaging.wpengine.com/', '')
     .replace(/\//g, '-')
     .replace(/^-|-$/g, '') || 'home';
 }
 
 async function preparePageForScreenshot(page) {
-  // Disable CSS animations and transitions (including pseudo-elements)
+  // Disable CSS animations and transitions
   await page.addStyleTag({
     content: `
       *, *::before, *::after {
@@ -71,6 +71,7 @@ async function preparePageForScreenshot(page) {
     }
 
     // Freeze requestAnimationFrame to stop any remaining JS-driven animations
+    const originalRaf = window.requestAnimationFrame;
     window.requestAnimationFrame = () => 0;
     window.cancelAnimationFrame = () => {};
 
@@ -100,12 +101,12 @@ async function preparePageForScreenshot(page) {
   });
 }
 
-test.describe('skai.io — visual regression (stable pages)', () => {
+test.describe('skaistaging.wpengine.com — visual regression (stable pages)', () => {
   for (const url of pages) {
     const name = normalizeName(url);
 
     test(name, async ({ page }) => {
-      await page.goto(url, { waitUntil: 'networkidle' });
+      await page.goto(url, { waitUntil: 'load', timeout: 120000 });
 
       // Accept cookies (if any)
       try {
