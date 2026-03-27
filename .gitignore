@@ -16,3 +16,6 @@ ClaudeMCP
 
 # Editor
 .vscode
+
+# k6 load testing
+k6
